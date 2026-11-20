@@ -1,14 +1,37 @@
 # China-Africa Trade Monitoring Dataset: SQL Analysis
 
-An exploratory SQL analysis of shipment-level trade data from China to African
-destinations. The repository includes the source CSV, SQLite-compatible SQL
-queries, and a report generated from the dataset.
+An exploratory analysis of shipment-level trade data from China to African
+destinations. It includes a Streamlit dashboard, the source CSV,
+SQLite-compatible SQL queries, and a report generated from the dataset.
+
+## Interactive dashboard
+
+[![Deploy to Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=Jono-M007%2Fchina-africa-trade-analysis&branch=main&mainModule=app.py)
+
+The dashboard downloads the CSV directly from this repository's `main` branch
+on GitHub, caches it for 15 minutes, and offers a manual refresh button. It
+includes destination, commodity, transport, delay, and anomaly filters;
+interactive trade, logistics, and risk charts; and searchable, downloadable
+shipment records.
+
+**First-time setup:** select the repository, `main` branch, and `app.py` in
+Streamlit Community Cloud, then deploy. The badge above opens the deployment
+flow; after deployment, Streamlit provides the live app URL.
+
+To run it locally:
+
+```bash
+python -m pip install -r requirements.txt
+streamlit run app.py
+```
 
 ## Repository contents
 
 | File | Description |
 | --- | --- |
 | [`china_africa_trade_dataset.csv`](china_africa_trade_dataset.csv) | Shipment-level source data (10,000 rows) |
+| [`app.py`](app.py) | Streamlit dashboard; reads the CSV from GitHub |
+| [`requirements.txt`](requirements.txt) | Python dependencies for the dashboard |
 | [`china_africa_trade_analysis.sql`](china_africa_trade_analysis.sql) | 27 commented SQL questions and analysis queries |
 | [`china_africa_trade_analysis_report.md`](china_africa_trade_analysis_report.md) | Detailed tabular analysis results |
 
